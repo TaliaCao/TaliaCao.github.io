@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Talia Cao - CPA & Power BI Certified Professional | Financial & Business Intelligence Expert">
+    <meta name="keywords" content="Talia Cao, CPA, Excel, Power BI, Financial Analyst, FP&A, Financial Modelling, Accountant, Business Intelligence, Finance Professional, Process Automation">
+    <title>Talia Cao, CPA | Finance & BI Professional</title>
+    
+    <style>
+        /* ===== GLOBAL STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Teal color palette */
+            --primary-color: #008080;
+            --secondary-color: #00B3B3;
+            --accent-color: #b22853;
+            --text-dark: #2C3E50;
+            --text-light: #31363B;
+            --background-light: #E8F4F4;
+            --white: #FFFFFF;
+            --gradient-start: #008080;
+            --gradient-end: #005F5F;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+        
+        /* ===== NAVIGATION ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+        
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+        
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: var(--white);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 650;
+            margin-bottom: 0.5rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero .tagline {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1.2s ease-out;
+        }
+        
+        .hero .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 1.4s ease-out;
+        }
+        
+        .cta-button {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta-primary {
+            background-color: var(--accent-color);
+            color: var(--white);
+        }
+        
+        .cta-primary:hover {
+            background-color: #b22853;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .cta-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+        
+        .cta-secondary:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+            border-radius: 2px;
+        }
+        
+        /* ===== ABOUT SECTION ===== */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        
+        .profile-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            overflow: hidden;
+            border: 4px solid var(--primary-color);
+        }
+        
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .credentials {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+        
+        .credentials li {
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            background-color: var(--background-light);
+            border-radius: 5px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .about-text h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        
+        .about-text p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+        
+        /* ===== USPs SECTION ===== */
+        #usps {
+            background-color: var(--background-light);
+        }
+        
+        .usps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .usp-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .usp-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .usp-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .usp-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        
+        .usp-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        .usp-highlight {
+            background-color: var(--background-light);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            text-align: center;
+        }
+        
+        /* ===== ACHIEVEMENTS SECTION ===== */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .achievement-card {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: var(--white);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .achievement-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .achievement-number {
+            font-size: 3rem;
+            font-weight: 650;
+            margin-bottom: 0.5rem;
+        }
+        
+        .achievement-label {
+            font-size: 1.1rem;
+            font-weight: 550;
+            opacity: 1;
+        }
+        
+        /* ===== PORTFOLIO SECTION ===== */
+        #portfolio {
+            background-color: var(--background-light);
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .portfolio-item {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .portfolio-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--white);
+        }
+        
+        .portfolio-content {
+            padding: 1.5rem;
+        }
+        
+        .portfolio-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .portfolio-content p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tag {
+            background-color: var(--background-light);
+            color: var(--secondary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .portfolio-link {
+            display: inline-block;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-link:hover {
+            color: var(--accent-color);
+        }
+        
+        /* ===== SKILLS SECTION ===== */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1rem;
+        }
+        
+        .skill-category {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .skill-category h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--background-light);
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .skill-list li::before {
+            content: '✓';
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        /* ===== CONTACT SECTION ===== */
+        #contact {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: var(--white);
+        }
+        
+        #contact .section-title {
+            color: var(--white);
+        }
+        
+        #contact .section-title::after {
+            background: var(--white);
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .contact-details h3 {
+            margin-bottom: 0.3rem;
+            font-size: 1.2rem;
+        }
+        
+        .contact-details a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+        
+        .contact-details a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: var(--white);
+            color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+        
+        .cta-section {
+            text-align: center;
+        }
+        
+        .cta-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 650;
+        }
+        
+        .cta-section p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            text-align: left;
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: #005555;
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        footer p {
+            opacity: 0.8;
+        }
+        
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .portfolio-grid,
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* ===== UTILITY CLASSES ===== */
+        .text-center {
+            text-align: center;
+        }
+        
+        .mt-2 {
+            margin-top: 2rem;
+        }
+        
+        .mb-2 {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#usps">Why Me?</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Talia Cao, CPA</h1>
+        <p class="subtitle">Finance & Business Intelligence (BI) Professional</p>
+        <p class="tagline">Bridging Analytics, Business & Strategy | Financial Modelling & Power BI Expert</p>
+        <div class="cta-buttons">
+            <a href="#contact" class="cta-button cta-primary">Get in Touch</a>
+            <a href="#portfolio" class="cta-button cta-secondary">View My Work</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="profile-card">
+                    <div class="profile-image">
+                        <img src="profile-photo.jpeg" alt="Talia Cao">
+                    </div>
+                    <h3>Talia Cao, CPA</h3>
+                    <p style="color: var(--text-light); margin-bottom: 1rem;">CPA | Power BI Certified</p>
+                    <ul class="credentials">
+                        <li>📊 CPA Australia</li>
+                        <li>💻 Power BI Data Analyst (PL-300)</li>
+                        <li>🎓 MBA Candidate (AGSM, UNSW)</li>
+                        <li>🏆 60+ Projects, 10+ Industries</li>
+                    </ul>
+                    <div class="social-links" style="justify-content: center; margin-top: 1.5rem;">
+                        <a href="https://www.linkedin.com/in/caongocdathao/" target="_blank" class="social-link" title="LinkedIn">💼</a>
+                        <a href="https://github.com/TaliaCao" target="_blank" class="social-link" title="GitHub">💻</a>
+                        <a href="mailto:talia.cao310@gmail.com" class="social-link" title="Email">📧</a>
+                    </div>
+                </div>
+                
+                <div class="about-text">
+                    <h3>Manager@SumProduct - Finance & BI Consultant</h3>
+                    <p>
+                        I'm a CPA-qualified finance professional with over 5 years of experience in financial modelling, 
+                        business intelligence and process automation. Currently working as a Manager of SumProduct's Sydney team, a business consultancy and
+                        training firm, I specialise in transforming complex data into actionable insights through 
+                        Power BI dashboards and advanced Excel solutions.
+                    </p>
+                    <p>
+                        My consulting career has given me exposure to diverse industries and SME to large corporate clients, including National 
+                        Australia Bank (NAB) and Glencore Australia. I've delivered 60+ projects ranging from building 3-statement financial 
+                        models to migrating critical reports to Power BI, consistently achieving measurable improvements in efficiency 
+                        and decision-making speed.
+                    </p>
+                    <p>
+                        I bring modelling best practices, technical expertise (CPA + Power BI certification) and a track record 
+                        of delivering tangible business value. My focus includes Financial Planning & Analysis and Business 
+                        Intelligence where I can make a meaningful impact and develop my expertise in data-driven 
+                        financial decision-making.
+                    </p>
+                    <p>
+                        Beyond my corporate work, I'm passionate about knowledge sharing. I've trained over 5,000 professionals globally 
+                        as a speaker and coordinator at Excel Virtually Global conferences (2021-present) and I'm co-author of the Final 
+                        Friday Fix Excel challenge blog series.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- USPs Section -->
+    <section id="usps">
+        <div class="container">
+            <h2 class="section-title">Why Me?</h2>
+            <div class="usps-grid">
+                <div class="usp-card">
+                    <div class="usp-icon">🎯</div>
+                    <h3>Proven Impact</h3>
+                    <p>
+                        I don't just build models and dashboards, I deliver measurable business value.
+                        I have achieved 60% performance improvements in dashboards through optimisation and automated 
+                        reporting that saved 95% of manual processing time.
+                    </p>
+                    <div class="usp-highlight">60% performance gain • 95% time saved</div>
+                </div>
+                
+                <div class="usp-card">
+                    <div class="usp-icon">🏅</div>
+                    <h3>Dual Credentials</h3>
+                    <p>
+                        I combine financial background (CPA Australia) with technical expertise (Microsoft Power BI PL-300 certification). 
+                        This rare combination means I understand both the business problem and the technical solution.
+                    </p>
+                    <div class="usp-highlight">CPA + Power BI Certified • Best of Both Worlds</div>
+                </div>
+                
+                <div class="usp-card">
+                    <div class="usp-icon">💼</div>
+                    <h3>Consulting DNA</h3>
+                    <p>
+                        Over five years in consulting means I thrive under pressure to manage projects and teams of up to 4 analysts, adapt quickly to new industries and communicate 
+                        effectively across all levels from CFOs to operational teams while overseeing project budgets & timelines.
+                    </p>
+                    <div class="usp-highlight">60+ projects • 10+ industries • Stakeholder management</div>
+                </div>
+                
+                <div class="usp-card">
+                    <div class="usp-icon">🚀</div>
+                    <h3>Automation Mindset</h3>
+                    <p>
+                        I see inefficiency and immediately think "how can we automate this?" Whether it's VBA scripts, Power Query 
+                        or Power BI, I build solutions that scale. My automation work has saved clients hundreds of hours monthly, 
+                        freeing finance and operation teams for strategic analysis instead of manual data entry.
+                    </p>
+                    <div class="usp-highlight">Scalable solutions • Process automation & optimisation </div>
+                </div>
+                
+                <div class="usp-card">
+                    <div class="usp-icon">🌏</div>
+                    <h3>International Experience</h3>
+                    <p>
+                        Over five years building expertise in Australia and global's markets, with enterprise clients like NAB and Glencore. 
+                        I bring international best practices, cross-cultural communication skills and exposure to international accounting 
+                        standards including AASB and IFRS.
+                    </p>
+                    <div class="usp-highlight">Global standards • SMEs to large corporates experience</div>
+                </div>
+                
+                <div class="usp-card">
+                    <div class="usp-icon">🎓</div>
+                    <h3>Teaching & Enablement</h3>
+                    <p>
+                        Trained 5,000+ professionals globally through Excel Virtually Global conferences. I don't just deliver 
+                        solutions, I upskill teams to maintain and evolve them. This ensures sustainability and builds organisational 
+                        capability, not dependency.
+                    </p>
+                    <div class="usp-highlight">5,000+ trained • Knowledge transfer expert</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements">
+        <div class="container">
+            <h2 class="section-title">Achievements</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-number">60+</div>
+                    <div class="achievement-label">Consulting Projects</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-number">10+</div>
+                    <div class="achievement-label">Industries</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-number">5+</div>
+                    <div class="achievement-label">Countries</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-number">5+</div>
+                    <div class="achievement-label">Conferences & Career Talks</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-number">60%</div>
+                    <div class="achievement-label">Performance Improvement</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-number">95%</div>
+                    <div class="achievement-label">Time Saved</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-number">$50K+</div>
+                    <div class="achievement-label">Recovered Through Reconciliation</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-number">5,000+</div>
+                    <div class="achievement-label">Professionals Trained Globally</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Featured Projects & Portfolio</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🤖</div>
+                    <div class="portfolio-content">
+                        <h3>Reporting Automation</h3>
+                        <p>
+                            Built automated reporting solutions for multiple clients using VBA, Power Query and Power Automate. 
+                            Eliminated manual data consolidation and reduced month-end close time significantly.
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="tag">VBA</span>
+                            <span class="tag">Power Query</span>
+                            <span class="tag">Power Automate</span>
+                        </div>
+                        <p><strong>Impact:</strong> 95% time reduction, hundreds of hours saved monthly</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-image">⛏️</div>
+                    <div class="portfolio-content">
+                        <h3>Glencore Procurement Analytics</h3>
+                        <p>
+                            Managed and maintained Dataverse/Dynamic 365 CRM database & Solution in Power Apps.
+                            Automated processes for pricing update, supplier analysis, forecast & resource management.
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Power BI</span>
+                            <span class="tag">Power Platform</span>
+                            <span class="tag">Mining</span>
+                        </div>
+                        <p><strong>Impact:</strong> Optimised processes, Power BI training for 10+ members & leaders</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">📊</div>
+                    <div class="portfolio-content">
+                        <h3>NAB Performance Optimisation</h3>
+                        <p>
+                            Transformed Power BI dashboards from slow, inefficient reports to high-performance 
+                            analytics tools. Optimised queries & DAX measures and redesigned data models using star schema.
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Power BI</span>
+                            <span class="tag">Optimisation</span>
+                            <span class="tag">Banking</span>
+                        </div>
+                        <p><strong>Impact:</strong> 60% performance improvement, 5 critical Power BI reports within 10 months</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-image">💰</div>
+                    <div class="portfolio-content">
+                        <h3>PetO Order & Invoice Automation</h3>
+                        <p>
+                            Developed automated Excel-based ordering, invoicing and reconciliation tools that 
+                            reduced weekly workload by up to 70% and identified supplier invoice discrepancies.
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Excel</span>
+                            <span class="tag">Automation</span>
+                            <span class="tag">Retail</span>
+                        </div>
+                        <p><strong>Impact:</strong> 70% time saved, recovered $50K+ in FY21 due to supply errors</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🗺️</div>
+                    <div class="portfolio-content">
+                        <h3>Vietnam Shape Map in Power BI</h3>
+                        <p>
+                            Created Power BI shape map for Vietnam's 34 new provincial-level administrative units to enable geographic data visualisation. 
+                            Open-source contribution to support business analytics community.
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Power BI</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Data Visualisation</span>
+                        </div>
+                        <a href="https://github.com/TaliaCao/Vietnam-Shape-Map" target="_blank" class="portfolio-link">View on GitHub →</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🎓</div>
+                    <div class="portfolio-content">
+                        <h3>Excel Virtually Global Conferences</h3>
+                        <p>
+                            Speaker and coordinator for global Excel conferences (2021-present). Delivered sessions on Excel, Power BI, 
+                            Power Platform, AI and automation.
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Teaching</span>
+                            <span class="tag">Excel</span>
+                            <span class="tag">Public Speaking</span>
+                        </div>
+                        <p><strong>Reach:</strong> 5,000+ professionals globally</p>
+                        <a href="https://github.com/TaliaCao/Excel-Virtually-Global" target="_blank" class="portfolio-link">Conference Materials →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Core Expertise & Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Financial Modelling &<br/>Process Improvement</h3>
+                    <ul class="skill-list">
+                        <li>Advanced Excel (Dynamic Arrays, Power Query, Power Pivot, VBA)</li>
+                        <li>Financial Modelling (3-statement, DCF, project finance, scenario analysis)</li>
+                        <li>Budget, Forecast & Variance Analysis</li>
+                        <li>Management Reporting & Consolidated Statutory Financial Statements</li>
+                        <li>AASB & IFRS Accounting Standards</li>
+                        <li>Operational Models</li>
+                        <li>Process Automation & Optimisation</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Business Intelligence & Analytics</h3>
+                    <ul class="skill-list">
+                        <li>Power BI (DAX, M, ETL, Data Modelling)</li>
+                        <li>Data Visualisation & Dashboard Design</li>
+                        <li>Power Platform (Power Automate, Power Apps & Power Pages)</li>
+                        <li>SQL (Subqueries, CTEs, Joins, Window Functions)</li>
+                        <li>Python (pandas, numpy, matplotlib, seaborn for data analytics)</li>
+                        <li>Statistical Analysis & Forecasting</li>
+                        <li>Performance Optimisation</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Consulting & Soft Skills</h3>
+                    <ul class="skill-list">
+                        <li>Stakeholder Management (C-suite to Operations)</li>
+                        <li>Business Partnering & Consulting</li>
+                        <li>Project Management & Delivery</li>
+                        <li>Training & Knowledge Transfer</li>
+                        <li>Cross-Cultural Communication</li>
+                        <li>Attention to Detail & Systems Thinking</li>
+                        <li>Problem Solving & Critical Thinking</li>
+                        <li>Presentation Skills</li>
+                        <li>Time & Stress Management</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="text-center mt-2">
+                <h3 style="color: var(--secondary-color); margin-bottom: 1rem;">Professional Certifications & Development</h3>
+                <div class="achievements-grid" style="max-width: 1200px; margin: 0 auto;">
+                    <div class="achievement-card" style="background: var(--white); color: var(--primary-color); box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <div class="achievement-label" style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">CPA Australia</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">Certified Practising Accountant</div>
+                    </div>
+                    <div class="achievement-card" style="background: var(--white); color: var(--primary-color); box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <div class="achievement-label" style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Microsoft PL-300</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">Power BI Data Analyst</div>
+                    </div>
+                    <div class="achievement-card" style="background: var(--white); color: var(--primary-color); box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <div class="achievement-label" style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">MBA (In Progress)</div>
+                        <div style="font-size: 0.9rem; opacity: 0.9;">AGSM, UNSW Sydney, Australia<br/>(19<sup>th</sup> globally, 2025 in the<br/>QS World University Rankings)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <a href="mailto:talia.cao310@gmail.com">talia.cao310@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">💼</div>
+                        <div class="contact-details">
+                            <h3>LinkedIn</h3>
+                            <a href="https://www.linkedin.com/in/caongocdathao/" target="_blank">linkedin.com/in/caongocdathao</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">💻</div>
+                        <div class="contact-details">
+                            <h3>GitHub</h3>
+                            <a href="https://github.com/TaliaCao" target="_blank">github.com/TaliaCao</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Sydney, Australia / Ho Chi Minh city, Vietnam</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cta-section">
+                    <h3>Consulting Services Available</h3>
+                    <p>
+                        I offer consulting services for organisations looking to optimise financial reporting, 
+                        build Power BI dashboards, automate processes or develop financial models. Whether 
+                        it's a one-time project or ongoing support, I bring proven expertise and measurable results.
+                    </p>
+                    <p style="margin-bottom: 2rem;">
+                        Let's discuss how I can help your organisation work smarter, not harder with tailored solutions.
+                    </p>
+                    <a href="mailto:talia.cao310@gmail.com?subject=Consulting Inquiry" class="cta-button cta-primary">
+                        Discuss Your Project
+                    </a>
+                    <div style="margin-top: 2rem;">
+                        <a href="https://drive.google.com/file/d/11cLaR3noXh2gxDrKA0OwvKR4khbesCDE/view?usp=sharing" class="cta-button cta-secondary">
+                            View My Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Talia Cao. All rights reserved.</p>
+            <p style="margin-top: 0.5rem;">CPA Australia | Microsoft Certified Power BI Data Analyst | MBA Candidate</p>
+        </div>
+    </footer>
+
+    <!-- Simple scroll animation -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '0';
+                    entry.target.style.transform = 'translateY(30px)';
+                    setTimeout(() => {
+                        entry.target.style.transition = 'all 0.8s ease-out';
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('.usp-card, .portfolio-item, .skill-category, .achievement-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
