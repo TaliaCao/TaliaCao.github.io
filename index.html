@@ -529,11 +529,14 @@
             font-size: 2rem;
             width: 50px;
             height: 50px;
+            min-width: 50px;      /* ADD THIS */
+            min-height: 50px;     /* ADD THIS */
             background: rgba(255,255,255,0.2);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0;       /* ADD THIS - prevents squishing */
         }
         
         .contact-details h3 {
@@ -807,6 +810,88 @@
                 font-size: 0.9rem;
             }
             
+            /* ===== CONTACT SECTION FIX ===== */
+            #contact .container {
+                padding: 3rem 1rem;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                max-width: 100%;
+            }
+            
+            .contact-info {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .contact-item {
+                display: flex;
+                align-items: flex-start; /* Changed from center */
+                gap: 1rem;
+                flex-wrap: nowrap;
+            }
+            
+            .contact-icon {
+                width: 50px;
+                height: 50px;
+                min-width: 50px;
+                min-height: 50px;
+                max-width: 50px;
+                max-height: 50px;
+                background: rgba(255,255,255,0.2);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.8rem;
+                flex-shrink: 0;
+                flex-grow: 0;
+                aspect-ratio: 1 / 1;
+                padding: 0; /* Ensure no padding distorts */
+            }
+            
+            .contact-details {
+                flex: 1;
+                min-width: 0;
+            }
+            
+            .contact-details h3 {
+                font-size: 1.1rem;
+                margin-bottom: 0.3rem;
+                word-wrap: break-word;
+            }
+            
+            .contact-details a,
+            .contact-details p {
+                font-size: 0.9rem;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+            
+            /* CTA section */
+            .cta-section {
+                text-align: center;
+                padding: 1rem;
+            }
+            
+            .cta-section h3 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+            
+            .cta-section p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+
             /* Container padding */
             .container {
                 padding: 3rem 1.5rem;
@@ -822,12 +907,31 @@
             .about-text p {
                 font-size: 0.9rem;
             }
-            
+
             .achievement-number {
                 font-size: 2rem;
             }
             
             .achievement-label {
+                font-size: 0.85rem;
+            }
+
+            .contact-icon {
+                width: 45px;
+                height: 45px;
+                min-width: 45px;
+                min-height: 45px;
+                max-width: 45px;
+                max-height: 45px;
+                font-size: 1.5rem;
+            }
+            
+            .contact-details h3 {
+                font-size: 1rem;
+            }
+            
+            .contact-details a,
+            .contact-details p {
                 font-size: 0.85rem;
             }
         }
