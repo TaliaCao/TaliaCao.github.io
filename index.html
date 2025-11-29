@@ -41,34 +41,88 @@
             top: 0;
             width: 100%;
             background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            padding: 1rem 0;
+            padding: 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             z-index: 1000;
         }
-        
-        nav ul {
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: none; /* Hidden on desktop, shown on mobile */
+        }
+
+        .nav-menu {
             list-style: none;
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+            flex: 1;
         }
-        
-        nav ul li {
-            margin: 0 1.5rem;
+
+        .nav-menu li {
+            margin: 0;
         }
-        
-        nav ul li a {
+
+        .nav-link {
             color: var(--white);
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
             padding: 0.5rem 1rem;
             border-radius: 5px;
+            display: block;
         }
-        
-        nav ul li a:hover {
+
+        .nav-link:hover {
             background-color: rgba(255,255,255,0.2);
             transform: translateY(-2px);
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--white);
+            margin: 3px 0;
+            transition: all 0.3s ease;
+            border-radius: 3px;
+        }
+
+        /* Hamburger animation when active */
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
         }
         
         /* ===== HERO SECTION ===== */
@@ -572,29 +626,71 @@
         
         /* ===== RESPONSIVE DESIGN ===== */
         @media (max-width: 768px) {
+            /* Show hamburger menu on mobile */
+            .hamburger {
+                display: flex;
+            }
+            
+            /* Show brand name on mobile */
+            .nav-brand {
+                display: block;
+            }
+            
+            /* Hide navigation menu by default on mobile */
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 60px;
+                flex-direction: column;
+                background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+                width: 100%;
+                text-align: center;
+                transition: left 0.3s ease;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.3);
+                padding: 2rem 0;
+                gap: 0;
+            }
+            
+            .nav-menu li {
+                width: 100%;
+                padding: 0.5rem 0;
+            }
+            
+            .nav-link {
+                padding: 1rem;
+                width: 100%;
+                border-radius: 0;
+            }
+            
+            /* Show menu when active */
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            /* Hero section adjustments */
+            .hero {
+                padding: 6rem 1.5rem 3rem;
+            }
+            
             .hero h1 {
                 font-size: 2rem;
             }
             
             .hero .subtitle {
-                font-size: 1.5rem;
+                font-size: 1.2rem;
             }
             
+            .hero .tagline {
+                font-size: 1rem;
+            }
+            
+            /* Content adjustments */
             .about-content {
                 grid-template-columns: 1fr;
             }
             
             .contact-content {
                 grid-template-columns: 1fr;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            nav ul li {
-                margin: 0.5rem 0;
             }
             
             .section-title {
@@ -604,6 +700,33 @@
             .portfolio-grid,
             .skills-container {
                 grid-template-columns: 1fr;
+            }
+            
+            /* USP cards */
+            .usps-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Achievements grid */
+            .achievements-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            /* Container padding */
+            .container {
+                padding: 3rem 1.5rem;
+            }
+        }
+
+        /* Tablet adjustments */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .nav-menu {
+                gap: 0.5rem;
+            }
+            
+            .nav-link {
+                padding: 0.5rem 0.8rem;
+                font-size: 0.95rem;
             }
         }
         
@@ -622,16 +745,25 @@
     </style>
 </head>
 <body>
+
     <!-- Navigation -->
     <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#usps">Why Me?</a></li>
-            <li><a href="#achievements">Achievements</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="nav-container">
+            <div class="nav-brand">Talia Cao, CPA</div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#usps" class="nav-link">Why Me?</a></li>
+                <li><a href="#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
     <!-- Hero Section -->
@@ -1074,6 +1206,33 @@
                     });
                 }
             });
+        });
+        
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        // Toggle menu when hamburger is clicked
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when a nav link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
         });
 
         // Add fade-in animation on scroll
