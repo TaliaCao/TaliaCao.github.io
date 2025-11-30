@@ -173,7 +173,6 @@
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
-            flex: 1 1;                     /* All buttons share equal width */
         }
         
         .cta-primary {
@@ -891,7 +890,6 @@
             .cta-button {
                 padding: 1rem 2rem;
                 font-size: 1rem;
-                flex: 1 1;
             }
 
             /* Container padding */
@@ -1417,6 +1415,29 @@
 
     <!-- Simple scroll animation -->
     <script>
+        // Ensure all buttons have the same width
+        function setEqualButtonWidths() {
+            const buttons = document.querySelectorAll("cta-button");
+            let maxWidth = 0;
+        
+            // Reset widths to auto before measuring
+            buttons.forEach(btn => btn.style.width = "auto");
+        
+            // Find the widest button
+            buttons.forEach(btn => {
+              const width = btn.offsetWidth;
+              if (width > maxWidth) maxWidth = width;
+            });
+        
+            // Apply the widest width to all buttons
+            buttons.forEach(btn => btn.style.width = maxWidth + "px");
+        }
+        
+        // Run on page load
+        window.addEventListener("load", setEqualButtonWidths);
+        // Run again if window resizes (responsive)
+        window.addEventListener("resize", setEqualButtonWidths);
+        
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
