@@ -173,6 +173,7 @@
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
+            height: 50px;
         }
         
         .cta-primary {
@@ -1506,6 +1507,8 @@
         
         // Run on page load
         window.addEventListener("load", setEqualButtonWidths);
+        // Run again if window resizes (responsive)
+        window.addEventListener("resize", setEqualButtonWidths);
     </script>
 </body>
 </html>
