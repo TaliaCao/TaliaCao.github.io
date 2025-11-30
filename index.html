@@ -1412,31 +1412,6 @@
             <p style="margin-top: 0.5rem;">CPA Australia | Microsoft Certified Power BI Data Analyst | MBA Candidate</p>
         </div>
     </footer>
-
-    <!-- Ensure all buttons have the same width -->
-    <script>
-        function setEqualButtonWidths() {
-            const buttons = document.querySelectorAll("cta-button");
-            let maxWidth = 0;
-        
-            // Reset widths to auto before measuring
-            buttons.forEach(btn => btn.style.width = "auto");
-        
-            // Find the widest button
-            buttons.forEach(btn => {
-                const width = btn.offsetWidth;
-                if (width > maxWidth) maxWidth = width;
-            });
-        
-            // Apply the widest width to all buttons
-            buttons.forEach(btn => btn.style.width = maxWidth + "px");
-        }
-        
-        // Run on page load
-        window.addEventListener("load", setEqualButtonWidths);
-        // Run again if window resizes (responsive)
-        window.addEventListener("resize", setEqualButtonWidths);
-    </script>
     
     <!-- Simple scroll animation -->
     <script>
@@ -1506,6 +1481,32 @@
         document.querySelectorAll('.usp-card, .portfolio-item, .skill-category, .achievement-card').forEach(el => {
             observer.observe(el);
         });
+    </script>
+    
+    <!-- Ensure all buttons have the same width -->
+    <script>
+        function setEqualButtonWidths() {
+            const buttons = document.querySelectorAll(".cta-button");
+            if (!buttons.length) return;
+            let maxWidth = 0;
+        
+            // Reset widths to auto before measuring
+            buttons.forEach(btn => btn.style.width = "auto");
+        
+            // Find the widest button
+            buttons.forEach(btn => {
+                const width = btn.offsetWidth;
+                if (width > maxWidth) maxWidth = width;
+            });
+        
+            // Apply the widest width to all buttons
+            buttons.forEach(btn => btn.style.width = maxWidth + "px");
+        }
+        
+        // Run on page load
+        window.addEventListener("load", setEqualButtonWidths);
+        // Run again if window resizes (responsive)
+        window.addEventListener("resize", setEqualButtonWidths);
     </script>
 </body>
 </html>
