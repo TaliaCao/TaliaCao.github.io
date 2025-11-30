@@ -1488,6 +1488,7 @@
         function setEqualButtonWidths() {
             const buttons = document.querySelectorAll(".cta-button");
             if (!buttons.length) return;
+            
             let maxWidth = 0;
         
             // Reset widths to auto before measuring
@@ -1505,8 +1506,6 @@
         
         // Run on page load
         window.addEventListener("load", setEqualButtonWidths);
-        // Run again if window resizes (responsive)
-        window.addEventListener("resize", setEqualButtonWidths);
     </script>
 </body>
 </html>
