@@ -173,7 +173,6 @@
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
-            height: 50px;
         }
         
         .cta-primary {
@@ -1493,11 +1492,9 @@
             // Reset widths to auto before measuring
             buttons.forEach(btn => btn.style.width = "auto");
             
-            // Convert 2rem → px (reads the root <html> font-size)
-            const rootFontSize = parseFloat(
-                getComputedStyle(document.documentElement).fontSize
-            );
-            const extra = 2 * rootFontSize; // 2rem in px
+            // Get extra width from padding of .cta-button
+            const style = getComputedStyle(buttons[0]);
+            const horizontalPadding = parseFloat(style.paddingLeft) + parseFloat(style.paddingRight); // in px
       
             let maxWidth = 0;
             
@@ -1507,8 +1504,8 @@
                 if (width > maxWidth) maxWidth = width;
             });
 
-            // Add 2rem to the final width
-            const finalWidth = maxWidth + extra;
+            // Add padding to the final width
+            const finalWidth = maxWidth + horizontalPadding;
             
             // Apply the widest width to all buttons
             buttons.forEach(btn => btn.style.width = finalWidth + "px");
