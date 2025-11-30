@@ -160,7 +160,6 @@
             justify-content: center;
             gap: 1rem;
             flex-wrap: wrap;
-            flex: 1;
             animation: fadeInUp 1.4s ease-out;
         }
         
@@ -174,6 +173,7 @@
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
+            flex: 1;                     /* All buttons share equal width */
         }
         
         .cta-primary {
