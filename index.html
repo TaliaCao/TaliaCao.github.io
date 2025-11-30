@@ -1489,23 +1489,29 @@
         function setEqualButtonWidths() {
             const buttons = document.querySelectorAll(".cta-button");
             if (!buttons.length) return;
-            
-            let maxWidth = 0;
         
             // Reset widths to auto before measuring
             buttons.forEach(btn => btn.style.width = "auto");
-        
+            
+            // Convert 2rem → px (reads the root <html> font-size)
+            const rootFontSize = parseFloat(
+                getComputedStyle(document.documentElement).fontSize
+            );
+            const extra = 2 * rootFontSize; // 2rem in px
+      
+            let maxWidth = 0;
+            
             // Find the widest button
             buttons.forEach(btn => {
                 const width = btn.offsetWidth;
                 if (width > maxWidth) maxWidth = width;
             });
 
-            // Add paddings to width
-            maxWidth = maxWidth + 2rem
+            // Add 2rem to the final width
+            const finalWidth = maxWidth + extra;
             
             // Apply the widest width to all buttons
-            buttons.forEach(btn => btn.style.width = maxWidth + "px");
+            buttons.forEach(btn => btn.style.width = finalWidth + "px");
         }
         
         // Run on page load
