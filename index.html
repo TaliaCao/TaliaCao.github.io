@@ -1413,9 +1413,8 @@
         </div>
     </footer>
 
-    <!-- Simple scroll animation -->
+    <!-- Ensure all buttons have the same width -->
     <script>
-        // Ensure all buttons have the same width
         function setEqualButtonWidths() {
             const buttons = document.querySelectorAll("cta-button");
             let maxWidth = 0;
@@ -1425,8 +1424,8 @@
         
             // Find the widest button
             buttons.forEach(btn => {
-              const width = btn.offsetWidth;
-              if (width > maxWidth) maxWidth = width;
+                const width = btn.offsetWidth;
+                if (width > maxWidth) maxWidth = width;
             });
         
             // Apply the widest width to all buttons
@@ -1437,7 +1436,10 @@
         window.addEventListener("load", setEqualButtonWidths);
         // Run again if window resizes (responsive)
         window.addEventListener("resize", setEqualButtonWidths);
-        
+    </script>
+    
+    <!-- Simple scroll animation -->
+    <script>
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
