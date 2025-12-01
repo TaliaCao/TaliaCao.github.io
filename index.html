@@ -1492,11 +1492,11 @@
     <!-- Ensure all buttons have the same width -->
     <script>
         function setEqualButtonWidths() {
-            const buttons = document.querySelectorAll(".cta-button");
+            const buttons = document.querySelectorAll('.cta-button');
             if (!buttons.length) return;
         
             // Reset widths to auto before measuring
-            buttons.forEach(btn => btn.style.width = "auto");
+            buttons.forEach(btn => btn.style.width = 'auto');
             
             // Get extra width from padding of .cta-button
             const style = getComputedStyle(buttons[0]);
@@ -1514,13 +1514,13 @@
             const finalWidth = maxWidth + horizontalPadding;
             
             // Apply the widest width to all buttons
-            buttons.forEach(btn => btn.style.width = finalWidth + "px");
+            buttons.forEach(btn => btn.style.width = finalWidth + 'px');
         }
         
         // Run on page load
-        window.addEventListener("load", setEqualButtonWidths);
+        window.addEventListener('load', setEqualButtonWidths);
         // Run again if window resizes (responsive)
-        window.addEventListener("resize", setEqualButtonWidths);
+        window.addEventListener('resize', setEqualButtonWidths);
     </script>
 </body>
 </html>
