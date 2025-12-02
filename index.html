@@ -165,7 +165,7 @@
         }
         
         .cta-button {
-            padding: 1rem 1rem;
+            padding: 0.7rem 0.7rem;
             font-size: 1.1rem;
             font-weight: 600;
             border: none;
@@ -233,6 +233,7 @@
             grid-template-columns: 1fr 2fr;
             gap: 3rem;
             align-items: start;
+            margin: 1rem;
         }
         
         .profile-card {
@@ -244,8 +245,8 @@
         }
         
         .profile-image {
-            width: 200px;
-            height: 200px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             margin: 0 auto 1.5rem;
             overflow: hidden;
@@ -396,7 +397,7 @@
         
         .portfolio-image {
             width: 100%;
-            height: 200px;
+            height: 150px;
             background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
             display: flex;
             align-items: center;
@@ -540,6 +541,8 @@
             gap: 3rem;
             max-width: 900px;
             margin: 0 auto;
+            justify-content: center;
+            align-items: center;
         }
         
         .contact-info {
@@ -816,7 +819,7 @@
                 grid-template-columns: 1fr;
             }
             
-            /* Achievements grid - stack on mobile */
+            /* Achievements grid */
             .achievements-grid {
                 grid-template-columns: 1fr;
                 gap: 1rem;
@@ -839,7 +842,7 @@
                 font-size: 0.9rem;
             }
 
-            /* Certifications grid - stack on mobile */
+            /* Certifications grid */
             .certifications-grid {
                 grid-template-columns: 1fr;
                 gap: 1rem;
@@ -854,8 +857,9 @@
                 box-sizing: border-box;
             }
             
-            /* ===== CONTACT SECTION FIX ===== */
+            /* Contact */
             #contact .container {
+                display: grid;
                 padding: 3rem 1rem;
             }
             
@@ -1408,14 +1412,14 @@
                             <a href="mailto:talia.cao310@gmail.com">talia.cao310@gmail.com</a>
                         </div>
                     </div>
-                    
+                    <!-- 
                     <div class="contact-item">
                         <div class="contact-icon"><img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" width=25 style="vertical-align:middle;"></div>
                         <div class="contact-details">
                             <h3>LinkedIn</h3>
                             <a href="https://www.linkedin.com/in/caongocdathao/" target="_blank">linkedin.com/in/caongocdathao</a>
                         </div>
-                    </div>
+                    </div> -->
                     
                     <div class="contact-item">
                         <div class="contact-icon"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968866.png" width=25 style="vertical-align:middle;"></div>
@@ -1434,24 +1438,33 @@
                     </div>
                 </div>
                 
-                <div class="cta-section">
-                    <h3>Consulting Services Available</h3>
-                    <p>
-                        I offer consulting services for organisations looking to optimise financial reporting, 
-                        build Power BI dashboards, automate processes or develop financial models. Whether 
-                        it's a one-time project or ongoing support, I bring proven expertise and measurable results.
-                    </p>
-                    <p style="margin-bottom: 2rem;">
-                        Let's discuss how I can help your organisation work smarter, not harder with tailored solutions.
-                    </p>
-                    <a href="mailto:talia.cao310@gmail.com?subject=Consulting Inquiry" class="cta-button cta-primary">
-                        Discuss Your Project
-                    </a>
-                    <div style="margin-top: 1rem;">
-                        <a href="https://drive.google.com/file/d/11cLaR3noXh2gxDrKA0OwvKR4khbesCDE/view?usp=sharing" class="cta-button cta-secondary">
-                            View My Resume
-                        </a>
+                <!-- LinkedIn profile badge -->
+                <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
+                    <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="VERTICAL" data-vanity="caongocdathao" data-version="v1">
+                        <a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/caongocdathao/?trk=profile-badge"></a>
                     </div>
+                </div>
+                
+                <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+            </div>
+            
+            <div class="cta-section" style="margin-top: 3rem;">
+                <h3>Consulting Services Available</h3>
+                <p>
+                    I offer consulting services for organisations looking to optimise financial & data reporting, 
+                    build Power BI dashboards, automate processes or develop financial models. Whether 
+                    it's a one-time project or ongoing support, I bring proven expertise and measurable results.
+                </p>
+                <p style="margin-bottom: 2rem;">
+                    Let's discuss how I can help your organisation work smarter, not harder with tailored solutions.
+                </p>
+                <a href="mailto:talia.cao310@gmail.com?subject=Consulting Inquiry" class="cta-button cta-primary">
+                    Discuss Your Project
+                </a>
+                <div style="margin-top: 1rem;">
+                    <a href="https://drive.google.com/file/d/11cLaR3noXh2gxDrKA0OwvKR4khbesCDE/view?usp=sharing" class="cta-button cta-secondary">
+                        View My Resume
+                    </a>
                 </div>
             </div>
         </div>
